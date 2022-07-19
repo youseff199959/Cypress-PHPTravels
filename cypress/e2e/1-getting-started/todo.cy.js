@@ -15,6 +15,8 @@ describe('Open the required website', () => {
   it('Check on some icons on the home page screen', () => {
     cy.get('#languages').click()
     cy.get('ul[aria-labelledby="languages"]').find('li').should('have.length', 12)
+    cy.get('#currency').click()
+    cy.get('ul[aria-labelledby="currency"]').find('li').should('have.length', 11)
     
   })
 
@@ -40,8 +42,18 @@ describe('Open the required website', () => {
     cy.get('input[name="password"]').type(password,{force: true})
     cy.get('button[type="submit"][class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]').click({force: true})
     cy.get('strong[style="text-transform:capitalize"]').should('contain.text',first)
+    cy.get('span[style="text-transform:capitalize"]').should('contain.text',first)
   })
 
+  it('Logout after successfull login', () => {
+    cy.get('a[href="https://www.phptravels.net/login"][class="theme-btn theme-btn-small theme-btn-transparent ml-1 waves-effect"]').should('be.visible').click();
+    cy.title().should('eq','Login - PHPTRAVELS')
+    cy.get('input[type="email"][class="form-control"]').type(email,{force: true})
+    cy.get('input[name="password"]').type(password,{force: true})
+    cy.get('button[type="submit"][class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]').click({force: true})
+    cy.get('[href="https://www.phptravels.net/account/logout"][class=" waves-effect"]').click()
+    cy.title().should('eq','Login - PHPTRAVELS')
+  })
 
   
   
