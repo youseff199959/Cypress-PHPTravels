@@ -7,12 +7,18 @@ let phone = faker.phone.number();
 let email = faker.internet.email();
 let password = faker.random.alpha(15);
 
-describe('example to-do app', () => {
+describe('Open the required website', () => {
   beforeEach(() => {
     cy.visit('/')
   })
 
-  it('Sign up for an account',{ scrollBehavior: false } ,   () => {
+  it('Check on some icons on the home page screen', () => {
+    cy.get('#languages').click()
+    cy.get('ul[aria-labelledby="languages"]').find('li').should('have.length', 12)
+    
+  })
+
+  it('Sign up for an account',   () => {
     cy.get('a[href="https://www.phptravels.net/signup"][class="theme-btn theme-btn-small waves-effect"]').should('be.visible').click();
     cy.title().should('eq','Signup - PHPTRAVELS')
     cy.wait(1000)
@@ -27,7 +33,7 @@ describe('example to-do app', () => {
 
   })
 
-  it('Check on some icons on the home page screen', () => {
+  it('Login using a Fake data', () => {
     cy.get('a[href="https://www.phptravels.net/login"][class="theme-btn theme-btn-small theme-btn-transparent ml-1 waves-effect"]').should('be.visible').click();
     cy.title().should('eq','Login - PHPTRAVELS')
     cy.get('input[type="email"][class="form-control"]').type(email,{force: true})
@@ -35,6 +41,7 @@ describe('example to-do app', () => {
     cy.get('button[type="submit"][class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]').click({force: true})
     cy.get('strong[style="text-transform:capitalize"]').should('contain.text',first)
   })
+
 
   
   
