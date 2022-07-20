@@ -26,6 +26,7 @@ module.exports={
             loginFormButton :'button[type="submit"][class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]',
             firstNameStrong : 'strong[style="text-transform:capitalize"]',
             firstName : 'span[style="text-transform:capitalize"]',
+            loginFailed : 'div[class="alert alert-danger failed"]',
 
         },
         logoutButton:'[href="https://www.phptravels.net/account/logout"][class=" waves-effect"]',

@@ -38,7 +38,7 @@ describe('Open the required website', () => {
   })
 
   //Login with the contant data we saved at the beginning of the test case and validate that the user is able to login 
-  it('Login using a Fake data', () => {
+  it('Login using a valid data', () => {
     cy.get(data.elements.login.loginButton).should('be.visible').click();
     cy.title().should('eq','Login - PHPTRAVELS')
     cy.get(data.elements.login.emailField).type(email,{force: true})
