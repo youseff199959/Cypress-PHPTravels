@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+
 
 module.exports={
      elements : {
@@ -15,6 +17,7 @@ module.exports={
             accountType:'#account_type',
             signUpFormButton:'button[type="submit"]',
             signUpSuccessMessage: 'div[class="alert alert-success signup"]',
+            signUpSuccessMessageText: 'Signup successfull please login.'
         },
         login:{
             loginButton : 'a[href="https://www.phptravels.net/login"][class="theme-btn theme-btn-small theme-btn-transparent ml-1 waves-effect"]',
@@ -25,16 +28,19 @@ module.exports={
             firstName : 'span[style="text-transform:capitalize"]',
 
         },
-        logoutButton:'[href="https://www.phptravels.net/account/logout"][class=" waves-effect"]'
-        
+        logoutButton:'[href="https://www.phptravels.net/account/logout"][class=" waves-effect"]',
 
-
-        // first :faker.name.firstName(),
-        // last : faker.name.lastName(),
-        // phone : faker.phone.number(),
-        // email : faker.internet.email(),
-        // password : faker.random.alpha(15),
+      
         
       },
+
+      data:{
+        first :faker.name.firstName(),
+        last : faker.name.lastName(),
+        phone : faker.phone.number('011########'),
+        email : faker.internet.email(),
+        password : faker.random.alpha(15),
+        accountType : "agent",
+    },
 }
 
