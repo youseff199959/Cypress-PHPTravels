@@ -16,7 +16,7 @@ describe('Open the required website', () => {
     cy.get('#languages').click()
     cy.get('ul[aria-labelledby="languages"]').find('li').should('have.length', 12)
     cy.get('#currency').click()
-    cy.get('ul[aria-labelledby="currency"]').find('li').should('have.length', 11)
+    cy.get('ul[aria-labelledby="currency"]').find('li').should('have.length', 12)
     
   })
 
