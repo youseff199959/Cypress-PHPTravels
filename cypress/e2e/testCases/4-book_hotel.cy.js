@@ -40,6 +40,28 @@ describe('Open the required website', () => {
         // cy.get(data.elements.book.confirmBooking).click({force:true}) //if you want to confirm the booking unhased this command
 
     })
+
+    it('Search for hotels in a specific range of date in the selected city',   () => {
+        cy.get(data.elements.login.loginButton).should('be.visible').click();
+        cy.title().should('eq','Login - PHPTRAVELS')
+        cy.get(data.elements.login.emailField).type(loginData.email,{force: true})
+        cy.get(data.elements.login.passwordField).type(loginData.password,{force: true})
+        cy.get(data.elements.login.loginFormButton).click({force: true})
+        cy.title().should('eq','Dashboard - PHPTRAVELS')
+        cy.get(data.elements.hotel.hotelsButton).click({force: true})
+        cy.title().should('eq','Search Hotels - PHPTRAVELS')
+        cy.get(data.elements.hotel.citySearch).click({force:true})
+        cy.get(data.elements.hotel.cityTypeBox).type("Dubai",{force:true}).wait(5000)
+        cy.get(data.elements.hotel.city).click({force:true})
+        cy.get(data.elements.hotel.checkinDate).click({force:true})
+        cy.get(data.elements.hotel.checkinDatePicker).click({force:true})
+        cy.get(data.elements.hotel.checkoutDate).click({force:true})
+        cy.get(data.elements.hotel.nextMonthButton).click({force:true})
+        cy.get(data.elements.hotel.checkoutDatePicker).click({force:true})
+        cy.wait(2000)
+        cy.get('#submit').click({force:true})
+
+      })
     
 
 
