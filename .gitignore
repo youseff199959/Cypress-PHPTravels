@@ -1,2 +1,3 @@
 node_modules
 videos
+cypress/e2e/testCases/Signup.cy.js
