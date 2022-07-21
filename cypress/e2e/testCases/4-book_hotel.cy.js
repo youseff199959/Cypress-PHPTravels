@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 //importing the data file that has all the locators and the required data for the test cases 
-import { faker } from '@faker-js/faker';
 const data = require('../data/data.js');
 const loginData = require('../data/loginData.js')
 
@@ -22,7 +21,8 @@ describe('Open the required website', () => {
         for (let i = 0; i < 4; i++) {
             cy.get(data.elements.hotel.nextScrollHotels).click({force:true})
         }
-        cy.get('div[class="owl-stage"]>div:nth-child(11)>div').click()
+        cy.get(data.elements.hotel.hotelPrice).click()
+        cy.get('[class="col-md-3 booked_26"]>div[class="borders p-4"]>div>button').click({force:true})
        
 
     })

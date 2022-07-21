@@ -33,6 +33,7 @@ module.exports={
         hotel:{
             nextScrollHotels:'div[class="owl-next"]',
             hotelsButton:'[href="https://www.phptravels.net/hotels"]',
+            hotelPrice: 'div[class="owl-stage"]>div:nth-child(11)>div',
         },
       },
 
