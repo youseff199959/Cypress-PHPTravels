@@ -34,7 +34,7 @@ describe('Open the required website', () => {
     cy.get(data.elements.signUp.accountType).select(data.data.accountType,{force: true})
     cy.get(data.elements.signUp.signUpFormButton).click({force: true})
     cy.get(data.elements.signUp.signUpSuccessMessage).should('contain.text',data.elements.signUp.signUpSuccessMessageText)
-
+    cy.log((email + "/n" + password))
   })
 
   //Login with the contant data we saved at the beginning of the test case and validate that the user is able to login 

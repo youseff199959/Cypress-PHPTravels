@@ -30,9 +30,10 @@ module.exports={
 
         },
         logoutButton:'[href="https://www.phptravels.net/account/logout"][class=" waves-effect"]',
-
-      
-        
+        hotel:{
+            nextScrollHotels:'div[class="owl-next"]',
+            hotelsButton:'[href="https://www.phptravels.net/hotels"]',
+        },
       },
 
       data:{
