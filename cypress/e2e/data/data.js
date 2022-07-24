@@ -59,6 +59,15 @@ module.exports={
             childLastName_2:'[name="child_lastname_2"]',
             agreeCheckbox:'[type="checkbox"]',
             confirmBooking:'[type="submit"]',
+        },
+        tours:{
+            buttonTours:'a[href="https://www.phptravels.net/tours"]',
+            selectedTour:'Big Bus Tour of Dubai',
+            adultsNumber:'select[id="adults"]',
+            childernNumber:'select[id="childs"]',
+            infantNumber:'select[id="infants"]',
+            confirmNumber:'button[type="submit"]'
+            
         }
       },
 
