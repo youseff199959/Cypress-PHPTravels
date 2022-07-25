@@ -66,8 +66,15 @@ module.exports={
             adultsNumber:'select[id="adults"]',
             childernNumber:'select[id="childs"]',
             infantNumber:'select[id="infants"]',
-            confirmNumber:'button[type="submit"]'
-            
+            confirmNumber:'button[type="submit"]',
+            adultTitle_1:'select[name="title_1"]',
+            adultFirstName_1:'input[name="firstname_1"]',
+            adultLastName_1:'input[name="lastname_1"]',
+            adultTitle_2:'select[name="title_2"]',
+            adultFirstName_2:'input[name="firstname_2"]',
+            adultLastName_2:'input[name="lastname_2"]',
+            confirmData:'[id="agreechb"]',
+            confirmBooking:'[type="submit"]'
         }
       },
 
